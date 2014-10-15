@@ -19,7 +19,7 @@ Usage
 Once installed:
 
 1. Go to *Tools*->*Generate BibTeX Labels*
-2. Wait for it to run, (you may need to set Endnote to display labels in the main view)
-3. Set Endnote to export using the BibTeX exporter, and use the resulting .bib file in your
-LaTeX documents.
-4. Enjoy!
+2. Wait for it to run, (you may need to set Endnote to display labels in the main view by right clicking the column heading and select `Label`)
+3. Set Endnote to export using the BibTeX output style (*Edit*->*Output Styles*->*Open Style Manager* and make sure `BibTeX Export` is ticked),
+4. Export your Endnote library to .bib (*File*->*Export*, uncheck `Export Selected References` if you want to export all your references), select the `BibTeX Export` output style, choose a file name with .bib extension and click save,
+5. Use the resulting .bib file in your LaTeX documents!
