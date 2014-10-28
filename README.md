@@ -10,6 +10,17 @@ Some notes:
 will append a random 5 character string to the label, eg. if `ranu09` is used, the next time 
 it sees a label that would be `ranu09`, it will use `ranu09-adf4v` instead.
 
+Building
+========
+
+To build this, you'll need the following in your build path:
+
+1. Rapidxml http://rapidxml.sourceforge.net/
+2. C++ Boost http://sourceforge.net/projects/boost/files/boost-binaries/1.56.0/boost_1_56_0-msvc-9.0-32.exe/download
+3. Endnote sdk http://endnote.com/en/software-development-kit
+4. Visual Studio 2008 http://www.microsoft.com/en-au/download/details.aspx?id=7873
+
+
 Installation
 ------------
 Copy the file from `vc9/Release/BibTex/BibTeX-Label-Creator.dll` into `My Documents/Endnote/Plugins` (create the folder if it doesn't exist) and start Endnote.
