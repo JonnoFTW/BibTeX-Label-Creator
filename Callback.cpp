@@ -163,7 +163,7 @@ void MyIUIServiceNotifyCallbackImp::OnMenuItemSelected() {
 				author_last.erase(std::remove(author_last.begin(), author_last.end(), ','), author_last.end());
 			}
 			str_label = author_last + year.substr(2,2);
-			if(used_labels.find(str_label) == used_labels.end()) {
+			if(used_labels.find(str_label) != used_labels.end()) {
 				// label is already in use
 				str_label += "-"+gen_random(5);
 			} 
