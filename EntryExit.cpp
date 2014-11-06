@@ -24,11 +24,14 @@
 // Required
 bool Init(CServiceRequest* p) {
 	MyIUIServiceNotifyCallbackImpPtr pIUIServiceNotifyCB	= RS::CreateInstance<MyIUIServiceNotifyCallbackImp>();
-
+	MyIUIServiceNotifyCallbackImpPtr pIUIServiceNotifyCBSep	= RS::CreateInstance<MyIUIServiceNotifyCallbackImp>();
+	pIUIServiceNotifyCBSep->useSep(true);
+	pIUIServiceNotifyCBSep->appendTitle(" (with _ sep)");
 	//save the pointer to the CServiceRequest*
-	if( pIUIServiceNotifyCB && pIUIServiceNotifyCB->SetCServiceRequest(p) ) {
+	if( pIUIServiceNotifyCB && pIUIServiceNotifyCB->SetCServiceRequest(p) &&
+		pIUIServiceNotifyCBSep && pIUIServiceNotifyCBSep->SetCServiceRequest(p) ) {
 		//Install the menu item to the Tools menu
-		return pIUIServiceNotifyCB->AddToToolsMenu();
+			return pIUIServiceNotifyCB->AddToToolsMenu() && pIUIServiceNotifyCBSep->AddToToolsMenu();
 	}
 	return false;
 }

@@ -9,6 +9,7 @@ Some notes:
 2. It will not overwrite existing labels, if it encounters a potential duplicate label, it
 will append a random 5 character string to the label, eg. if `ranu09` is used, the next time 
 it sees a label that would be `ranu09`, it will use `ranu09-adf4v` instead.
+3. A second menu item is included that inserts an underscore between the surname and short year, as this feature was requested
 
 Building
 ========

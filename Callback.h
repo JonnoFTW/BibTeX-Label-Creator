@@ -35,13 +35,13 @@ struct MyIUIServiceNotifyCallbackImp : IUIServiceNotifyCallback {
 	// remaining is not a part of IUIServiceNotifyCallback
 	bool SetCServiceRequest(CServiceRequest* p) { m_pReq = p; return m_pReq?true:false;};
 	bool AddToToolsMenu(void);
-
+	void useSep(bool useSep);
+	void appendTitle(std::string suffix);
 	private:
 		//members
 		CServiceRequest*	m_pReq;
 		std::string			m_sMenuItemName;
+		bool                m_useSep;
 
 };	// MyIUIServiceNotifyCallbackImp
 typedef RS::CBasePtr<MyIUIServiceNotifyCallbackImp> MyIUIServiceNotifyCallbackImpPtr;
-
-

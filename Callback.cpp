@@ -64,12 +64,18 @@ string gen_random(const int len) {
 MyIUIServiceNotifyCallbackImp::MyIUIServiceNotifyCallbackImp() {
 	m_pReq			= NULL;
 	m_sMenuItemName	= "Generate BibTeX Labels";
+	m_useSep        = false;
 }
 
 MyIUIServiceNotifyCallbackImp::~MyIUIServiceNotifyCallbackImp() {
 	m_pReq	= NULL;
 }
-
+void MyIUIServiceNotifyCallbackImp::appendTitle(string suffix) {
+	m_sMenuItemName.append(suffix);
+}
+void MyIUIServiceNotifyCallbackImp::useSep(bool useSep) {
+	m_useSep = useSep;
+}
 bool MyIUIServiceNotifyCallbackImp::AddToToolsMenu(void) {
 	//make sure the CServiceRequest* is not NULL
 	if( !m_pReq ) return false;
@@ -162,7 +168,12 @@ void MyIUIServiceNotifyCallbackImp::OnMenuItemSelected() {
 				author_last = strs.front();
 				author_last.erase(std::remove(author_last.begin(), author_last.end(), ','), author_last.end());
 			}
-			str_label = author_last + year.substr(2,2);
+			string sep = "";
+			if(m_useSep) {
+				sep = "_";
+			}
+			str_label = author_last + sep +year.substr(2,2);
+
 			if(used_labels.find(str_label) != used_labels.end()) {
 				// label is already in use
 				str_label += "-"+gen_random(5);
@@ -204,4 +215,6 @@ void MyIUIServiceNotifyCallbackImp::OnMenuItemSelected() {
 	//myfile.close();
 	//log.close();
 	(void)pFrontMostWindow->PostAutoGroup("Generated BibTex Labels",pUpdatedRecordList,0,0);
+
+	
 }// MyIUIServiceNotifyCallbackImp::OnMenuItemSelected
