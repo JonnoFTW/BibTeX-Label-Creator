@@ -24,6 +24,9 @@ To build this, you'll need the following in your build path:
 
 Installation
 ------------
+
+If you're on Windows 10, copy the .dll file from the root directory of this repository.
+
 Copy the file from `vc9/Release/BibTex/BibTeX-Label-Creator.dll` into `My Documents/Endnote/Plugins` (create the folder if it doesn't exist) and start Endnote.
 
 Usage
